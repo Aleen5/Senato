@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94347019900",
+    "project_id": "senato-6c24f",
+    "storage_bucket": "senato-6c24f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94347019900:android:5c518a6cc4966a9fbcabf9",
+        "android_client_info": {
+          "package_name": "com.example.senato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94347019900-m23ta9b2inkg88s153gev1ji1pjhjfaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKbCworJURcegNxSJfLAtoYqMGxKQytiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94347019900-m23ta9b2inkg88s153gev1ji1pjhjfaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
