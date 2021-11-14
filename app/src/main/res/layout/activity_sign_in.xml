@@ -9,11 +9,25 @@
     tools:context=".SignIn">
 
     <EditText
+        android:id="@+id/signInPwd"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/signIn_Pwd"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/signInEmail"
+        app:layout_constraintStart_toStartOf="@+id/signInEmail"
+        app:layout_constraintTop_toTopOf="@+id/signInEmail" />
+
+    <EditText
         android:id="@+id/signInEmail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="181dp"
+        android:layout_marginTop="262dp"
         android:layout_marginEnd="56dp"
         android:autofillHints="emailAddress, email"
         android:ems="10"
@@ -24,26 +38,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signInPwd"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:autofillHints="password"
-        android:ems="10"
-        android:hint="@string/signIn_Pwd"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/signInEmail"
-        app:layout_constraintStart_toStartOf="@+id/signInEmail"
-        app:layout_constraintTop_toBottomOf="@+id/signInEmail" />
-
     <Button
         android:id="@+id/signInBt"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="341dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="56dp"
         android:backgroundTint="#6fc1cc"
         android:text="@string/signIn_Bt"
@@ -51,6 +51,65 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/signInPwd" />
+
+    <TextView
+        android:id="@+id/senatoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="56dp"
+        android:text="Senato"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/senatoLogo"
+        app:layout_constraintStart_toStartOf="@+id/senatoLogo"
+        app:layout_constraintTop_toTopOf="@+id/senatoLogo" />
+
+    <ImageView
+        android:id="@+id/googleLoginImg"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="123dp"
+        app:layout_constraintEnd_toEndOf="@+id/signInBt"
+        app:layout_constraintStart_toStartOf="@+id/signInBt"
+        app:layout_constraintTop_toTopOf="@+id/signInBt"
+        app:srcCompat="@drawable/googleicon" />
+
+    <ImageView
+        android:id="@+id/senatoLogo"
+        android:layout_width="199dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="106dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/senatologo" />
+
+    <TextView
+        android:id="@+id/forgotPasswordLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="¿Olvidaste la contraseña?"
+        android:textColor="#6FC1CC"
+        app:layout_constraintEnd_toEndOf="@+id/googleLoginImg"
+        app:layout_constraintStart_toStartOf="@+id/googleLoginImg"
+        app:layout_constraintTop_toTopOf="@+id/googleLoginImg" />
+
+    <TextView
+        android:id="@+id/signUpLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="¿No tienes una cuenta? Regístrate aquí"
+        android:textColor="#6FC1CC"
+        app:layout_constraintEnd_toEndOf="@+id/forgotPasswordLink"
+        app:layout_constraintStart_toStartOf="@+id/forgotPasswordLink"
+        app:layout_constraintTop_toTopOf="@+id/forgotPasswordLink" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
