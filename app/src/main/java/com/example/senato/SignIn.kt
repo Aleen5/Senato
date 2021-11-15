@@ -27,13 +27,17 @@ class SignIn : AppCompatActivity() {
                     binding.signInPwd.text.toString())
             }
         }
+
+        binding.signUpLink.setOnClickListener {
+            reload("signup")
+        }
     }
 
     public override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
         if(currentUser != null){
-            reload();
+            reload("main");
         }
     }
 
@@ -44,7 +48,7 @@ class SignIn : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("AccesoFirebase", "signInWithEmail:success")
                     val user = auth.currentUser
-                    reload()
+                    reload("main")
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("AccesoFirebase", "signInWithEmail:failure", task.exception)
@@ -54,7 +58,10 @@ class SignIn : AppCompatActivity() {
             }
     }
 
-    private fun reload() {
-        this.startActivity(Intent(this, MainActivity::class.java))
+    private fun reload(activity:String) {
+        when(activity) {
+            "main" -> this.startActivity(Intent(this, MainActivity::class.java))
+            "signup" -> this.startActivity(Intent(this, SignUp::class.java))
+        }
     }
 }

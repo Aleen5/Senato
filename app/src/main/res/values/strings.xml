@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">Senato</string>
-    <string name="signIn_Email">Correo</string>
+    <string name="mainLogo_Description">Logo de Senato</string>
+    <string name="googleLogo_Description">Logo de Google</string>
+    <string name="signIn_Email">Correo electrónico</string>
     <string name="signIn_Pwd">Contraseña</string>
     <string name="signIn_Bt">Entrar</string>
+    <string name="signIn_Forgot">¿Olvidaste la contraseña?</string>
+    <string name="signIn_SignUp">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="signUp_Title">Registro</string>
+    <string name="signUp_Name">Nombre</string>
+    <string name="signUp_Surname">Apellido/s</string>
+    <string name="signUp_RepeatPwd">Repite la contraseña</string>
+    <string name="signUp_Button">Registrarse</string>
+    <string name="signUp_Back">Volver</string>
 </resources>
