@@ -46,20 +46,33 @@ class SignUp : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    // Sign in success
                     Log.d("RegistroFirebase", "createUserWithEmail:success")
                     val user = auth.currentUser
 
+                    // Create user's database document
+
+                    writeNewUser(
+                        user!!.uid, user!!.email, binding.signUpName.text.toString(),
+                        binding.signUpSurname.text.toString(), "623623623")
+                        Log.d("Crear documento usuario", "Success?")
 
                     reload("main")
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // If sign in fails
                     Log.w("RegistroFirebase", "createUserWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                     //updateUI(null)
                 }
             }
+    }
+
+    private fun writeNewUser(userId: String, email: String?, name: String, surname: String, phone:String) {
+        val user = User(email, name, surname, phone)
+        //val data = hashMapOf("users" to true)
+
+        db.child("users").child(userId).setValue(user)
     }
 
     override fun onBackPressed() {
