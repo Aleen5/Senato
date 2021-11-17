@@ -10,6 +10,7 @@
     <string name="signUp_Title">Registro</string>
     <string name="signUp_Name">Nombre</string>
     <string name="signUp_Surname">Apellido/s</string>
+    <string name="signUp_Phone">Teléfono</string>
     <string name="signUp_RepeatPwd">Repite la contraseña</string>
     <string name="signUp_Button">Registrarse</string>
     <string name="signUp_Back">Volver</string>

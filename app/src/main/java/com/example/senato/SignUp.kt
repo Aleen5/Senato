@@ -10,11 +10,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class SignUp : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var db: DatabaseReference
+    // lateinit var db: DatabaseReference
     private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,18 +24,19 @@ class SignUp : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        db = Firebase.database.reference
+        //db = Firebase.database.reference
 
         binding.signUpButton.setOnClickListener {
             if (binding.signUpName.text.toString().isNotEmpty()
                 && binding.signUpSurname.text.toString().isNotEmpty()
+                && binding.signUpPhone.text.toString().isNotEmpty()
                 && binding.signUpEmail.text.toString().isNotEmpty()
                 && binding.signUpPwd.text.toString().isNotEmpty()
                 && binding.signUpRepeatPwd.text.toString().isNotEmpty()
                 && binding.signUpPwd.text.toString().equals(binding.signUpRepeatPwd.text.toString()))
                     // Ejecutar registro
                     signIn(binding.signUpName.text.toString(), binding.signUpSurname.text.toString(),
-                    binding.signUpEmail.text.toString(), binding.signUpPwd.text.toString())
+                    binding.signUpPhone.text.toString(), binding.signUpEmail.text.toString(), binding.signUpPwd.text.toString())
         }
 
         binding.signUpBack.setOnClickListener {
@@ -42,7 +45,7 @@ class SignUp : AppCompatActivity() {
         }
     }
 
-    private fun signIn(name:String, surname:String, email:String, password:String) {
+    private fun signIn(name:String, surname:String, phone:String, email:String, password:String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -54,8 +57,7 @@ class SignUp : AppCompatActivity() {
 
                     writeNewUser(
                         user!!.uid, user!!.email, binding.signUpName.text.toString(),
-                        binding.signUpSurname.text.toString(), "623623623")
-                        Log.d("Crear documento usuario", "Success?")
+                        binding.signUpSurname.text.toString(), binding.signUpPhone.text.toString())
 
                     reload("main")
                 } else {
@@ -70,9 +72,12 @@ class SignUp : AppCompatActivity() {
 
     private fun writeNewUser(userId: String, email: String?, name: String, surname: String, phone:String) {
         val user = User(email, name, surname, phone)
-        //val data = hashMapOf("users" to true)
+        val db = FirebaseFirestore.getInstance()
+        val usersRef = db.collection("users")
+        usersRef.document(userId).set(user).addOnSuccessListener { Log.d("DatabaseDocumentInsert", "Success") }
+            .addOnFailureListener { Log.d("DatabaseDocumentInsert", "Failure") }
 
-        db.child("users").child(userId).setValue(user)
+        //db.child("users").child(userId).setValue(user)
     }
 
     override fun onBackPressed() {
