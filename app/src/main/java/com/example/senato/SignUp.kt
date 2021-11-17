@@ -52,7 +52,7 @@ class SignUp : AppCompatActivity() {
                     // Create user's database document
 
                     writeNewUser(
-                        user!!.uid, user!!.email, binding.signUpName.text.toString(),
+                        user!!.uid, user.email, binding.signUpName.text.toString(),
                         binding.signUpSurname.text.toString(), binding.signUpPhone.text.toString())
 
                     reload("main")
@@ -72,8 +72,6 @@ class SignUp : AppCompatActivity() {
         val usersRef = db.collection("users")
         usersRef.document(userId).set(user).addOnSuccessListener { Log.d("DatabaseDocumentInsert", "Success") }
             .addOnFailureListener { Log.d("DatabaseDocumentInsert", "Failure") }
-
-        //db.child("users").child(userId).setValue(user)
     }
 
     override fun onBackPressed() {
