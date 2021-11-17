@@ -8,9 +8,6 @@ import android.widget.Toast
 import com.example.senato.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
@@ -24,7 +21,6 @@ class SignUp : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        //db = Firebase.database.reference
 
         binding.signUpButton.setOnClickListener {
             if (binding.signUpName.text.toString().isNotEmpty()
@@ -35,8 +31,8 @@ class SignUp : AppCompatActivity() {
                 && binding.signUpRepeatPwd.text.toString().isNotEmpty()
                 && binding.signUpPwd.text.toString().equals(binding.signUpRepeatPwd.text.toString()))
                     // Ejecutar registro
-                    signIn(binding.signUpName.text.toString(), binding.signUpSurname.text.toString(),
-                    binding.signUpPhone.text.toString(), binding.signUpEmail.text.toString(), binding.signUpPwd.text.toString())
+                    signIn(binding.signUpName.text.toString(), binding.signUpSurname.text.toString(), binding.signUpPhone.text.toString(),
+                        binding.signUpEmail.text.toString(), binding.signUpPwd.text.toString())
         }
 
         binding.signUpBack.setOnClickListener {

@@ -28,6 +28,9 @@ class SignIn : AppCompatActivity() {
             }
         }
 
+        binding.forgotPasswordLink.setOnClickListener {
+            reload("resetpassword")
+        }
         binding.signUpLink.setOnClickListener {
             reload("signup")
         }
@@ -62,6 +65,7 @@ class SignIn : AppCompatActivity() {
         when(activity) {
             "main" -> this.startActivity(Intent(this, MainActivity::class.java))
             "signup" -> this.startActivity(Intent(this, SignUp::class.java))
+            "resetpassword" -> this.startActivity(Intent(this, ResetPassword::class.java))
         }
     }
 }

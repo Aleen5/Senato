@@ -14,4 +14,7 @@
     <string name="signUp_RepeatPwd">Repite la contraseña</string>
     <string name="signUp_Button">Registrarse</string>
     <string name="signUp_Back">Volver</string>
+    <string name="reset_Title">Restablecer contraseña</string>
+    <string name="email_Repeat">Repite tu correo electrónico</string>
+    <string name="reset_Button">Enviar correo de confirmación</string>
 </resources>
