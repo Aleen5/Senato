@@ -1,152 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#414342"
-    tools:context=".SignUp">
+    android:background="#414342">
 
-    <TextView
-        android:id="@+id/signUpBack"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="122dp"
-        android:text="@string/signUp_Back"
-        android:textColor="#6FC1CC"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/signUpButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signUpButton"
-        app:layout_constraintTop_toTopOf="@+id/signUpButton" />
+        tools:context=".SignUp">
 
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:backgroundTint="#6fc1cc"
-        android:text="@string/signUp_Button"
-        android:textColor="#414342"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/signUpRepeatPwd"
-        app:layout_constraintStart_toStartOf="@+id/signUpRepeatPwd"
-        app:layout_constraintTop_toTopOf="@+id/signUpRepeatPwd" />
+        <TextView
+            android:id="@+id/signUpBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="122dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="122dp"
+            android:text="@string/signUp_Back"
+            android:textColor="#6FC1CC"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/signUpButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUpButton"
+            app:layout_constraintTop_toTopOf="@+id/signUpButton" />
 
-    <EditText
-        android:id="@+id/signUpPwd"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:autofillHints="emailAddress, email"
-        android:ems="10"
-        android:hint="@string/signIn_Pwd"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/signUpEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signUpEmail"
-        app:layout_constraintTop_toTopOf="@+id/signUpEmail"
-        tools:ignore="TouchTargetSizeCheck" />
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:backgroundTint="#6fc1cc"
+            android:text="@string/signUp_Button"
+            android:textColor="#414342"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/signUpRepeatPwd"
+            app:layout_constraintStart_toStartOf="@+id/signUpRepeatPwd"
+            app:layout_constraintTop_toTopOf="@+id/signUpRepeatPwd" />
 
-    <EditText
-        android:id="@+id/signUpRepeatPwd"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:autofillHints="emailAddress, email"
-        android:ems="10"
-        android:hint="@string/signUp_RepeatPwd"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/signUpPwd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signUpPwd"
-        app:layout_constraintTop_toTopOf="@+id/signUpPwd"
-        tools:ignore="TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/signUpPwd"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/signIn_Pwd"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/signUpEmail"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUpEmail"
+            app:layout_constraintTop_toTopOf="@+id/signUpEmail"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signUpEmail"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:autofillHints="emailAddress, email"
-        android:ems="10"
-        android:hint="@string/signIn_Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/signUpPhone"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signUpPhone"
-        app:layout_constraintTop_toTopOf="@+id/signUpPhone"
-        tools:ignore="TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/signUpRepeatPwd"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/signUp_RepeatPwd"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/signUpPwd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUpPwd"
+            app:layout_constraintTop_toTopOf="@+id/signUpPwd"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signUpName"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
-        android:autofillHints="emailAddress, email"
-        android:ems="10"
-        android:hint="@string/signUp_Name"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/signUpTitle"
-        app:layout_constraintStart_toStartOf="@+id/signUpTitle"
-        app:layout_constraintTop_toTopOf="@+id/signUpTitle"
-        tools:ignore="TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/signUpEmail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/signIn_Email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@+id/signUpPhone"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUpPhone"
+            app:layout_constraintTop_toTopOf="@+id/signUpPhone"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signUpSurname"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:autofillHints="emailAddress, email"
-        android:ems="10"
-        android:hint="@string/signUp_Surname"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/signUpName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signUpName"
-        app:layout_constraintTop_toTopOf="@+id/signUpName"
-        tools:ignore="TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/signUpName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="81dp"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/signUp_Name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/signUpTitle"
+            app:layout_constraintStart_toStartOf="@+id/signUpTitle"
+            app:layout_constraintTop_toTopOf="@+id/signUpTitle"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signUpPhone"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:autofillHints="emailAddress, email"
-        android:ems="10"
-        android:hint="@string/signUp_Phone"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/signUpSurname"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signUpSurname"
-        app:layout_constraintTop_toTopOf="@+id/signUpSurname"
-        tools:ignore="TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/signUpSurname"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/signUp_Surname"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/signUpName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUpName"
+            app:layout_constraintTop_toTopOf="@+id/signUpName"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/signUpTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="107dp"
-        android:text="@string/signUp_Title"
-        android:textColor="#6FC1CC"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="@+id/senatoLogoUp"
-        app:layout_constraintStart_toStartOf="@+id/senatoLogoUp"
-        app:layout_constraintTop_toTopOf="@+id/senatoLogoUp" />
+        <EditText
+            android:id="@+id/signUpPhone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/signUp_Phone"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/signUpSurname"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUpSurname"
+            app:layout_constraintTop_toTopOf="@+id/signUpSurname"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <ImageView
-        android:id="@+id/senatoLogoUp"
-        android:layout_width="84dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="164dp"
-        android:contentDescription="@string/mainLogo_Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/senatologo" />
+        <TextView
+            android:id="@+id/signUpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="107dp"
+            android:text="@string/signUp_Title"
+            android:textColor="#6FC1CC"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="@+id/senatoLogoUp"
+            app:layout_constraintStart_toStartOf="@+id/senatoLogoUp"
+            app:layout_constraintTop_toTopOf="@+id/senatoLogoUp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/senatoLogoUp"
+            android:layout_width="84dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="163dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="164dp"
+            android:contentDescription="@string/mainLogo_Description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/senatologo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

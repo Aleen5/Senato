@@ -56,6 +56,7 @@ class SignUp : AppCompatActivity() {
                         binding.signUpSurname.text.toString(), binding.signUpPhone.text.toString())
 
                     reload("main")
+                    finish()
                 } else {
                     // If sign in fails
                     Log.w("RegistroFirebase", "createUserWithEmail:failure", task.exception)

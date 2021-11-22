@@ -17,4 +17,6 @@
     <string name="reset_Title">Restablecer contraseña</string>
     <string name="email_Repeat">Repite tu correo electrónico</string>
     <string name="reset_Button">Enviar correo de confirmación</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
 </resources>
