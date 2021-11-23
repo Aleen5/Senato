@@ -2,7 +2,6 @@ package com.example.senato
 
 import android.content.Intent
 import android.content.res.Configuration
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +12,12 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.example.senato.Fragment.HomeFragment
+import com.example.senato.Fragment.SettingsFragment
+import com.example.senato.Fragment.VoteFragment
 import com.example.senato.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -25,6 +29,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var bottom_navigation: BottomNavigationView
+    private val homeFragment = HomeFragment()
+    private val voteFragment = VoteFragment()
+    private val settingsFragment = SettingsFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +40,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
+
+        // Fragments code
+
+        bottom_navigation = findViewById(R.id.bottom_navigation)
+        replaceFragment(homeFragment)
+
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.nav_home -> replaceFragment(homeFragment)
+                R.id.nav_vote -> replaceFragment(voteFragment)
+                R.id.nav_settings -> replaceFragment(settingsFragment)
+            }
+            true
+        }
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
@@ -51,6 +73,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navView : NavigationView  = findViewById(R.id.nav_view)
         val headerView : View = navView.getHeaderView(0)
         val navNameSurname : TextView = headerView.findViewById(R.id.nav_header_name_surname)
+        val navEmail: TextView = headerView.findViewById(R.id.nav_header_email)
 
         // Get user's data
 
@@ -59,6 +82,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         userDoc.get().addOnSuccessListener { document ->
             if (document != null) {
                 navNameSurname.text = "${document.getString("name")} ${document.getString("surname")}"
+                navEmail.text = document.getString("email")
+
 
             } else
                 Log.d("SuccessF", "No such document")
@@ -66,6 +91,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }.addOnFailureListener { exception ->
                 Log.d("SuccessF", "get failed with ", exception)
             }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        if (fragment != null) {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, fragment)
+            transaction.commit()
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

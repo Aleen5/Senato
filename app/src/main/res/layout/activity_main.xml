@@ -8,6 +8,36 @@
     android:id = "@+id/drawer_layout"
     tools:context = ".MainActivity"
     tools:openDrawer = "start">
+
+    <RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottom_navigation"
+                app:labelVisibilityMode="unlabeled"
+                android:background="?android:attr/windowBackground"
+                app:menu = "@menu/bottom_navigation" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
     
     <include
         layout = "@layout/app_bar_main"
@@ -21,5 +51,8 @@
         android:layout_gravity = "start"
         app:headerLayout="@layout/nav_header_main"
         app:menu = "@menu/activity_main_drawer" />
+
 </androidx.drawerlayout.widget.DrawerLayout>
+
+
 

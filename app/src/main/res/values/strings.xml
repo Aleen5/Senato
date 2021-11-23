@@ -23,4 +23,5 @@
     <string name="profile">Perfil</string>
     <string name="logout">Salir</string>
     <string name="configuration">Configuración</string>
+    <string name="welcome_back_message"> Bienvenido de vuelta, </string>
 </resources>
