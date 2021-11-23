@@ -17,6 +17,10 @@
     <string name="reset_Title">Restablecer contraseña</string>
     <string name="email_Repeat">Repite tu correo electrónico</string>
     <string name="reset_Button">Enviar correo de confirmación</string>
-    <string name="navigation_drawer_open">Open</string>
-    <string name="navigation_drawer_close">Close</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
+    <string name="welcome_message"> Bienvenido, </string>
+    <string name="profile">Perfil</string>
+    <string name="logout">Salir</string>
+    <string name="configuration">Configuración</string>
 </resources>

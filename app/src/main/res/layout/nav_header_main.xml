@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_header"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:background="#427f8f"
+    android:layout_height="200dp"
+    android:background="#6fc1cc"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -12,20 +13,31 @@
     android:orientation="vertical"
     android:padding = "16dp"
     android:theme = "@style/ThemeOverlay.AppCompat.Dark">
-    
+
     <ImageView
-        android:id = "@+id/nav_header_imageView"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src = "@mipmap/ic_launcher"/>
+        android:id="@+id/nav_header_imageView"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:src="@drawable/user" />
 
     <TextView
-        android:id="@+id/nav_header_textView"
+        android:id="@+id/nav_header_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:text = "Name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        android:paddingLeft="13dp"
+        android:text = "@string/welcome_message"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="italic"
+        android:textSize="14dp"/>
 
-
+    <TextView
+        android:id="@+id/nav_header_name_surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="13dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
 </LinearLayout>

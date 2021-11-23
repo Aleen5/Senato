@@ -13,7 +13,6 @@ import com.google.firebase.ktx.Firebase
 
 class SignUp : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    // lateinit var db: DatabaseReference
     private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
