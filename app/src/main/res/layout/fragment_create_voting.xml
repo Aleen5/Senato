@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/createVotingConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.CreateVotingFragment"
+    android:layout_marginTop="68dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="75dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:id="@+id/createVotingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_voting"
+            android:textSize="28sp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#6FC1CC"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_voting_title"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/newVotingTitle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="Ej: ¿Djessy es otaku?"
+            android:inputType="text"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/new_voting_type"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/newVotingType"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:entries="@array/voting_types" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/new_voting_options"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/newVotingOptions"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress, email"
+            android:ems="10"
+            android:hint="@string/new_voting_options_tooltip"
+            android:inputType="text"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/button_createVoting2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="239dp"
+            android:backgroundTint="#6fc1cc"
+            android:text="@string/create_voting"
+            android:textColor="#414342"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

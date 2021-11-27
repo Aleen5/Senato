@@ -13,9 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.example.senato.Fragment.HomeFragment
-import com.example.senato.Fragment.SettingsFragment
-import com.example.senato.Fragment.VoteFragment
+import com.example.senato.Fragment.*
 import com.example.senato.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -33,6 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val homeFragment = HomeFragment()
     private val voteFragment = VoteFragment()
     private val settingsFragment = SettingsFragment()
+    private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,8 +103,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.nav_item_profile -> Toast.makeText(this, "Item 1", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_configuration -> Toast.makeText(this, "Item 2", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_profile -> replaceFragment(profileFragment)
+            R.id.nav_item_configuration -> Toast.makeText(this, "To be implemented", Toast.LENGTH_SHORT).show()
             R.id.nav_item_logout -> {
                 Firebase.auth.signOut()
                 reload("signin")

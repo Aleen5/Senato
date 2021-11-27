@@ -24,4 +24,10 @@
     <string name="logout">Salir</string>
     <string name="configuration">Configuración</string>
     <string name="welcome_back_message"> Bienvenido de vuelta, </string>
+    <string name="create_voting"> Crear votación </string>
+    <string name="new_voting_title"> Título de la votación </string>
+    <string name="new_voting_options"> Opciones de la votación </string>
+    <string name="new_voting_options_tooltip"> Separados por comas "," </string>
+    <string name="new_voting_type"> Tipo de votación </string>
+    <string name="new_voting_users"> Usuarios invitados a la votación </string>
 </resources>

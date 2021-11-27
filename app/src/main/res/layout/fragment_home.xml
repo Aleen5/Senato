@@ -29,25 +29,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/recent_activity_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="172dp"
-        android:text="Tu actividad reciente aparecerá aquí"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/recent_activity_placeholder"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="263dp"
-        android:text="¡Vaya! Todavia no tienes actividad reciente. Puedes participar en una votación o crear una nueva en la pestaña de Votaciones"
+        android:layout_marginTop="188dp"
+        android:text="Empieza ya: Crea una votación"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_createVoting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="239dp"
+        android:backgroundTint="#6fc1cc"
+        android:text="@string/create_voting"
+        android:textColor="#414342"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/recent_activity_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/recent_activity_placeholder"
+        app:layout_constraintTop_toTopOf="@+id/recent_activity_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

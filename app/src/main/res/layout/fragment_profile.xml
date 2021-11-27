@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".Fragment.ProfileFragment"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp">
+
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/profile"
+        android:textColor="#6FC1CC"
+        android:textSize="28sp"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/profileName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress, email"
+        android:ems="10"
+        android:hint="@string/signUp_Name"
+        android:inputType="text"
+        android:layout_marginBottom="15dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/profileEmail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress, email"
+        android:ems="10"
+        android:hint="@string/signIn_Email"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="15dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+    <EditText
+        android:id="@+id/profileSurname"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress, email"
+        android:ems="10"
+        android:hint="@string/signUp_Surname"
+        android:inputType="text"
+        android:layout_marginBottom="15dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/profilePhone"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress, email"
+        android:ems="10"
+        android:hint="@string/signUp_Phone"
+        android:inputType="text"
+        android:layout_marginBottom="15dp"
+        tools:ignore="TouchTargetSizeCheck" />
+</LinearLayout>
