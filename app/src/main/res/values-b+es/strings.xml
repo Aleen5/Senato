@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Senato</string>
+    <string name="mainLogo_Description">Logo de Senato</string>
+    <string name="googleLogo_Description">Logo de Google</string>
+    <string name="signIn_Email">Correo electrónico</string>
+    <string name="signIn_Pwd">Contraseña</string>
+    <string name="signIn_Bt">Entrar</string>
+    <string name="signIn_Forgot">¿Olvidaste la contraseña?</string>
+    <string name="signIn_SignUp">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="signUp_Title">Registro</string>
+    <string name="signUp_Name">Nombre</string>
+    <string name="signUp_Surname">Apellido/s</string>
+    <string name="signUp_Phone">Teléfono</string>
+    <string name="signUp_RepeatPwd">Repite la contraseña</string>
+    <string name="signUp_Button">Registrarse</string>
+    <string name="signUp_Back">Volver</string>
+    <string name="reset_Title">Restablecer contraseña</string>
+    <string name="email_Repeat">Repite tu correo electrónico</string>
+    <string name="reset_Button">Enviar correo de confirmación</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
+    <string name="welcome_message"> Bienvenido, </string>
+    <string name="profile">Perfil</string>
+    <string name="logout">Salir</string>
+    <string name="configuration">Configuración</string>
+    <string name="welcome_back_message"> Bienvenido de vuelta, </string>
+    <string name="create_voting"> Crear votación </string>
+    <string name="new_voting_title"> Título de la votación </string>
+    <string name="new_voting_options"> Opciones de la votación </string>
+    <string name="new_voting_options_tooltip"> Separados por comas "," </string>
+    <string name="new_voting_type"> Tipo de votación </string>
+    <string name="new_voting_users"> Usuarios invitados a la votación </string>
+    <string name="voting_title"> Votación </string>
+    <string name="update_profile"> Actualizar perfil</string>
+    <string name="reset_fields"> Restablecer campos </string>
+</resources>
