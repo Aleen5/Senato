@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/votingConstraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Fragment.VotingFragment">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".Fragment.VotingFragment"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp">
 
     <TextView
-        android:id="@+id/textVotingLOL"
+        android:id="@+id/currentVotingHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="145dp"
-        android:text="SIUUUUUUUUUU"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="68dp"
+        android:text="@string/voting_title"
+        android:textColor="#6FC1CC"
+        android:textSize="28sp"
+        android:layout_marginBottom="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/currentVotingTitle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress, email"
+        android:ems="10"
+        android:textSize="25dp"
+        android:layout_marginBottom="15dp"
+        android:text = "Título"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/voting_options_Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/voting_item_options" />
+
+</LinearLayout>

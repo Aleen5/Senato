@@ -17,11 +17,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class VoteFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var adapterVoting: MyAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var dbVotings: MutableList<Voting>
     private lateinit var votingsID: MutableList<String>
-    private val votingFragment = VotingFragment()
+    private var votingFragment = VotingFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,9 +43,21 @@ class VoteFragment : Fragment() {
 
         // Set the list of votings to the adapter
 
-        Log.d("VotingsID", votingsID.toString())
+        var adapter = MyAdapter(dbVotings)
+        recyclerView.adapter = adapter
 
-        recyclerView.adapter = MyAdapter(dbVotings, this.requireContext(), votingsID)
+        adapter.setOnItemClickListener(object: MyAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                //Toast.makeText(this@VoteFragment.context, "You clicked on item no. $position", Toast.LENGTH_SHORT).show()
+                votingFragment = VotingFragment.newInstance(votingsID[position])
+                var contextF= view.context as AppCompatActivity
+                val transaction = contextF.supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragment_container, votingFragment)
+                transaction.commit()
+            }
+
+        })
+
     }
 
     // Function to get the votings. It receives the view as an argument an initializes the recyclerview once the query is done

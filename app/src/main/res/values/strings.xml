@@ -30,4 +30,5 @@
     <string name="new_voting_options_tooltip"> Separados por comas "," </string>
     <string name="new_voting_type"> Tipo de votación </string>
     <string name="new_voting_users"> Usuarios invitados a la votación </string>
+    <string name="voting_title"> Votación </string>
 </resources>
