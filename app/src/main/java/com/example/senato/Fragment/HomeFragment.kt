@@ -24,6 +24,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        auth = Firebase.auth
         val contextF: AppCompatActivity = context as AppCompatActivity
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -34,17 +35,15 @@ class HomeFragment : Fragment() {
             transaction.commit()
         }
 
+        getUserName(view)
+
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        auth = Firebase.auth
-
+    private fun getUserName(view: View) {
         // Get layout contents
 
-        val homeUserName: TextView = requireView().findViewById(R.id.homeWelcomeName)
+        val homeUserName: TextView = view.findViewById(R.id.homeWelcomeName)
 
         // Get user's data
 
@@ -52,12 +51,10 @@ class HomeFragment : Fragment() {
         val userDoc = db.collection("users").document(auth.uid!!)
         userDoc.get().addOnSuccessListener { document ->
             if (document != null) {
-                homeUserName?.text = document.getString("name")
+                homeUserName.text = document.getString("name")
             } else
                 Log.d("SuccessF", "No such document")
 
-        }.addOnFailureListener { exception ->
-            Log.d("SuccessF", "get failed with ", exception)
         }
     }
 }

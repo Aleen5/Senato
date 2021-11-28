@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Fragment.VotingFragment"
     android:orientation="vertical"
-    android:layout_marginStart="20dp">
+    android:layout_marginRight="20dp">
 
     <TextView
         android:id="@+id/currentVotingHeader"
@@ -15,6 +15,7 @@
         android:text="@string/voting_title"
         android:textColor="#6FC1CC"
         android:textSize="28sp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"/>
 
     <TextView
@@ -25,7 +26,20 @@
         android:ems="10"
         android:textSize="25dp"
         android:layout_marginBottom="15dp"
-        android:text = "Título"/>
+        android:layout_marginStart="20dp"
+        android:text = "Título"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/currentVotingInstructions"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress, email"
+        android:ems="10"
+        android:textSize="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="20dp"
+        android:text = "Haz click en el item para votar"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/voting_options_Recycler"
